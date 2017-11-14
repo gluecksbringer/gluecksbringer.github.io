@@ -62,7 +62,7 @@ function resizeWrapper() {
 		c.style.height = "300px";
 	}
 
+	ctx.clearRect(0, 0, c.width, c.height);
 	ctx.scale(iw/img1.width, iw/img1.width);
 	ctx.drawImage(img1, 0, 0, img1.width, img1.height);
-	ctx.scale(1/(iw/img1.width), 1/(iw/img1.width));
 }
