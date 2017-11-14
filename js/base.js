@@ -10,7 +10,17 @@ var body = null;
 var c = null;
 var ctx = null;
 
+var iw = 0;
+var ih = 0;
+
+var img1 = null;
+
 function init() {
+
+	img1 = new Image(160, 90);
+	img1.src = 'img/other/img1';
+
+
 	//menuImgWrapper = document.getElementById('menuImgWrapper');
 	//navBar = document.getElementById('navBar');
 
@@ -23,10 +33,8 @@ function init() {
 	//menuImgWrapper.addEventListener("click", toggleMenu);
 
 	resizeWrapper();
-	ctx.moveTo(0,0);
-	ctx.lineTo(200, 100);
-	ctx.stroke();
 	console.log("Init success");
+
 	resizeWrapper();
 }
 
@@ -45,8 +53,14 @@ function removeElement(obj) {
 
 function resizeWrapper() {
 	if ( imgWrapper.clientWidth < 600 ) {
-		c.style.height = (imgWrapper.clientWidth/2)+"px";
+		iw = imgWrapper.clientWidth;
+		ih = (imgWrapper.clientWidth/2);
+		c.style.height = ih+"px";
 	} else {
+		iw = imgWrapper.clientWidth;
+		ih = 300;
 		c.style.height = "300px";
 	}
+
+	ctx.drawImage(img1, iw, ih);
 }
