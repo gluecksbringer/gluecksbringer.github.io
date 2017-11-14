@@ -20,12 +20,12 @@ function init() {
 	c = document.getElementById('myCanvas');
 	ctx = c.getContext("2d");
 
-	ctx.moveTo(0,0);
-	ctx.lineTo(200, 100);
-	ctx.stroke();
 	//menuImgWrapper.addEventListener("click", toggleMenu);
 
 	resizeWrapper();
+	ctx.moveTo(0,0);
+	ctx.lineTo(200, 100);
+	ctx.stroke();
 	console.log("Init success");
 }
 
@@ -45,6 +45,8 @@ function removeElement(obj) {
 function resizeWrapper() {
 
 	if ( imgWrapper.clientWidth < 600 ) {
-
+		img.style.height = (imgWrapper.clientWidth/6)+"px";
+	} else {
+		img.style.height = "300px";
 	}
 }
