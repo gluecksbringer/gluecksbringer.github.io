@@ -1,3 +1,6 @@
+@ProzentGesammelt: 34.68%;
+
+
 @bgColor: rgb(245, 245, 245);
 @darkGray: #383838;
 
@@ -7,8 +10,36 @@
     }
 }
 
+#outerBar {
+    background-color: rgb(161, 133, 138);
+    border-radius: 15px;
+}
+
+#innerBar {
+    background-color: rgb(65, 207, 57);
+    width: 0px;
+    border-radius: 15px;
+    transition: width 3s ease-out 1s;
+}
+
+.barShown {
+    width: @ProzentGesammelt !important;
+}
+
 .darkGray {
 	background-color: @darkGray;
+}
+
+.s_slimBox {
+    .slimBox;
+}
+
+.s_thinBox {
+    .thinBox;
+}
+
+.s_lineBox {
+    .lineBox;
 }
 
 .s_full {
@@ -49,6 +80,16 @@
 	.thinBox;
 }
 
+.s_fullLine {
+    .s_full;
+    .lineBox;
+}
+
+.s_halfLine {
+    .s_half;
+    .lineBox;
+}
+
 .s_fullSlimBox {
 	.s_fullBox;
 	.slimBox;
@@ -67,6 +108,16 @@
 .s_halfThinBox {
 	.s_halfBox;
 	.thinBox;
+}
+
+.s_fullLineBox {
+    .s_fullBox;
+    .lineBox;
+}
+
+.s_halfBox {
+    .s_halfBox;
+    .lineBox;
 }
 
 .s_fittedIconWrapper {
@@ -226,11 +277,15 @@
 }
 
 .slimBox {
-    height: 4em;
+    height: 3.5em;
 }
 
 .thinBox {
 	height: 1.3em;
+}
+
+.lineBox {
+    height: 0.7em;
 }
 
 .contentBox {
@@ -282,6 +337,10 @@
     });
 }
 
+.decentParagraph {
+    line-height: 170%
+}
+
 .decentBorder {
     border-color: rgb(177, 177, 177);
 }
@@ -322,6 +381,22 @@
 
 .textJustify {
 	text-align: justify;
+}
+
+.textH1 {
+    font-size: 1.5em;
+}
+
+.textH2 {
+    font-size: 1.3em;
+}
+
+.textH3 {
+    font-size: 1.15em;
+}
+
+.textSmall {
+    font-size: 0.75em;
 }
 
 .decentClickable {

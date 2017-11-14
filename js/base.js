@@ -86,6 +86,10 @@ function init() {
 	console.log("Init success");
 
 	resizeWrapper();
+
+
+	//Show percentage bar
+	document.getElementById('innerBar').classList.add('barShown');
 }
 
 function toggleMenu() {
