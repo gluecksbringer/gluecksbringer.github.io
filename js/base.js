@@ -64,5 +64,5 @@ function resizeWrapper() {
 
 	img1.style.width = iw+"px";
 	img1.style.height = ih+"px";
-	ctx.drawImage(img1);
+	ctx.drawImage(img1, 0, 0);
 }
