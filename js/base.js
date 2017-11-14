@@ -7,13 +7,13 @@ var startIndex = 1;
 var endIndex = 10;
 
 function init() {
-	menuImgWrapper = document.getElementById('menuImgWrapper');
-	navBar = document.getElementById('navBar');
+	//menuImgWrapper = document.getElementById('menuImgWrapper');
+	//navBar = document.getElementById('navBar');
 
 	imgWrapper = document.getElementById('imgWrapper');
 	imgContainer = document.getElementById('imgContainer');
 
-	menuImgWrapper.addEventListener("click", toggleMenu);
+	//menuImgWrapper.addEventListener("click", toggleMenu);
 	imgWrapper.addEventListener('resize', resizeWrapper);
 }
 
