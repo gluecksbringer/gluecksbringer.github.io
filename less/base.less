@@ -1,0 +1,447 @@
+@darkGray: #383838;
+
+.responsive(@maxWidth; @rules) {
+    @media only screen and (max-width: @maxWidth) {
+        @rules();
+    }
+}
+
+.darkGray {
+	background-color: @darkGray;
+}
+
+.s_full {
+	.fullWidth;
+}
+
+.s_fullBox {
+	.s_full;
+	.boxSpacer;
+}
+
+.s_half {
+	.halfWidth;
+}
+
+.s_halfBox {
+	.s_half;
+	.boxSpacer;
+}
+
+.s_fullSlim {
+	.s_full;
+	.slimBox;
+}
+
+.s_halfSlim {
+	.s_half;
+	.slimBox;
+}
+
+.s_fullThin {
+	.s_full;
+	.thinBox;
+}
+
+.s_halfThin {
+	.s_half;
+	.thinBox;
+}
+
+.s_fullSlimBox {
+	.s_fullBox;
+	.slimBox;
+}
+
+.s_halfSlimBox {
+	.s_halfBox;
+	.slimBox;
+}
+
+.s_fullThinBox {
+	.s_fullBox;
+	.thinBox;
+}
+
+.s_halfThinBox {
+	.s_halfBox;
+	.thinBox;
+}
+
+.s_fittedIconWrapper {
+	.iconWrapperHeight;
+}
+
+.s_fittedIcon {
+	.iconHeight;
+}
+
+.s_msg {
+	.s_fullBox;
+	.corneredBox;
+	.overflowHidden;
+	.expand;	
+}
+
+.s_info {
+	.s_msg;
+	.infoBox;
+	.infoText;
+}
+
+.s_error {
+	.s_msg;
+	.errorBox;
+	.errorText;
+}
+
+.s_restWidth {
+	.restWidth;
+}
+
+.s_msgIconWrapper {
+	.paddingThinContent;
+	.thinBox;
+	.floatLeft;
+}
+
+.s_msgIcon {
+	.iconHeight;
+}
+
+.s_msgIconWrapper img {
+	.s_msgIcon;
+}
+
+.s_msgText {
+	.s_restWidth;
+	.textLeft;
+	.paddingThinContent;
+}
+
+.s_nav {
+	.s_fullBox;
+	.decentText;
+	.decentBorder;
+	.decentBottomBorder;
+	.overflowHidden;
+}
+
+.s_navItem {
+	.floatLeft;
+	.headItem;
+	.decentClickable;
+	.decentText;
+}
+
+.s_nav span {
+	.s_navItem;
+}
+
+.s_form {
+	.s_fullBox;
+	.contentBox;
+	.defaultFont;
+}
+
+.s_formLabel {
+	.s_fullBox;
+	.textLeft;
+	.floatLeft;
+	.decentText;
+	.defaultFont;
+}
+
+.s_formInput {
+	.s_fullBox;
+	.contentBox;
+	.boxSpacer;
+	.decentBorder;
+	.decentRectangleBorder;
+	.defaultFont;
+}
+
+.s_formButton {
+	.contentBox;
+	.floatRight;
+	.decentClickable;
+	.decentBorder;
+	.decentRectangleBorder;
+	.resetBackgroundColor;
+	.defaultFont;
+}
+
+.s_form label {
+	.s_formLabel;
+}
+
+.s_form input {
+	.s_formInput;
+}
+
+.s_form button {
+	.s_formButton;
+}
+
+/*
+ * Reset body
+ */
+
+@font-face { 
+	font-family: "raleway"; 
+	src: url("/resources/font/Raleway-Regular.ttf");	 
+}
+ 
+ body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-y: hidden;
+    font-family: raleway;
+}
+
+/*
+ * Section for all (quite) atomic styles
+ */
+ 
+ .defaultFont {
+ 	font-family: raleway;
+ }
+
+.fullWidth {
+    width: 100%;
+    height: auto;
+}
+
+.halfWidth {
+    width: 600px;
+    height: auto;
+    display: inline-block;
+    
+    .responsive(600px, {
+        width: 100%;
+    });
+}
+
+.slimBox {
+    height: 3em;
+}
+
+.thinBox {
+	height: 1.3em;
+}
+
+.contentBox {
+	box-sizing: border-box;
+	padding: 0.5em;
+}
+
+.infoBox {
+	background-color: rgba(12, 198, 38, 0.57);
+}
+
+.errorBox {
+	background-color: rgba(198, 12, 12, 0.57);
+}
+
+.corneredBox {
+	border-radius: 0.3em;
+	
+	.responsive(600px, {
+		border-radius: 0px;
+	});
+}
+
+.boxSpacer {
+	margin-bottom: 1em !important;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+.overflowHidden {
+	overflow: hidden;
+}
+
+.headItem {
+    box-sizing: border-box;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    
+    	.responsive(600px, {
+		width: 100%;
+		text-align: left;
+    });
+}
+
+.decentBorder {
+    border-color: rgb(177, 177, 177);
+}
+
+.decentBottomBorder {
+	border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.decentRectangleBorder {
+	border-width: 1px;
+    border-style: solid;
+}
+
+.decentText {
+    color: rgb(82, 82, 82);
+    
+    .responsive(600px, {
+    		color: rgb(189, 189, 189);
+    });
+}
+
+.infoText {
+    color: rgb(12, 87, 30);
+}
+
+.errorText {
+    color: rgb(87, 12, 12);
+}
+
+.textLeft {
+	text-align: left;
+}
+
+.textRight {
+	text-align: right;
+}
+
+.textJustify {
+	text-align: justify;
+}
+
+.decentClickable {
+    transition: color 0.15s linear;
+    transition: background-color 0.15s linear;
+    cursor: pointer;
+    
+    &:hover, &:active {
+    	    color: rgb(244, 244, 244);
+    		background-color: rgba(0, 0, 0, 0.5);
+    		transition: color 0.15s linear, background-color 0.15s linear;
+    
+	    .responsive(600px, {
+    		    color: unset;
+    			background-color: unset;
+    			transition: unset;
+    		});
+    }
+}
+
+.iconWrapperHeight {
+	width: auto;
+    height: 100%;
+}
+
+.iconWrapperWidth {
+	width: 100%;
+    height: auto;
+}
+
+.iconHeight {
+    width: auto;
+    height: 100%
+}
+
+.iconWidth {
+    width: 100%;
+    height: auto;
+}
+
+.paddingSlim {
+	box-sizing: border-box;
+	padding: 0.5em;
+}
+
+.paddingThin {
+	box-sizing: border-box;
+	padding: 0.35em;
+}
+
+.paddingSlimContent {
+	box-sizing: content-box;
+	padding: 0.5em;
+}
+
+.paddingThinContent {
+	box-sizing: content-box;
+	padding: 0.35em;	
+}
+
+.restWidth {
+	width: auto;
+	overflow: hidden;
+}
+
+.resetBackgroundColor {
+	background-color: unset;
+}
+
+/*
+ * Mobile related stuff
+ */
+ 
+ div#topBar {
+    margin: 0;
+    padding: 0;
+}
+
+div#menuImgWrapper {
+    visibility: hidden;
+    width: 0;
+    
+    .responsive(600px, {
+    	    visibility: visible;
+        width: auto;
+    });
+}
+
+div#navBar {
+	.responsive(600px, {
+		left: -100%;
+        position: absolute;
+        width: 100%;
+        height: 150%;
+        top: 3em;
+        transition: left 0.15s ease-out;
+        background-color: #383838;
+	});
+}
+ 
+ .mobileVisible {
+	visibility: hidden;
+	
+	.responsive(600px, {
+		visibility: visible;
+    });
+}
+
+.showMenu {
+	.responsive(600px, {
+		left: 0 !important;
+		transition: left 0.15s ease-out;
+	});
+}
+
+.expand {
+	max-height: 20em;
+}
+
+.collapse {
+	max-height: 0;
+	margin: 0 !important;
+	transition: max-height 0.15s ease-out, margin 0.15s ease-out; 
+}
+ 

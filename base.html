@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+	<head>
+		<title th:if="${title}" th:text="${'PrivatJet - ' + title}"></title>
+		<title th:if="!${title}" th:text="${'PrivatJet'}"></title>
+		<link rel="stylesheet/less" type="text/css" th:href="@{/resources/css/base.less}" href="../static/resources/css/base.less"/>
+		<script th:src="@{/resources/js/less.js}" src="../static/resources/js/less.js"></script>
+		<script th:src="@{/resources/js/base.js}" src="../static/resources/js/base.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />		
+	</head>
+
+	<body onload="init();">
+	
+		<!-- # HEADER # -->
+    		<div class="s_fullSlimBox darkGray">
+    		
+    			<!-- # HALF WIDTH # -->
+    			<div class="s_halfSlim">
+ 
+ 				<!-- # MENU # -->
+				<div class="s_fittedIconWrapper decentClickable floatLeft" id="menuImgWrapper">
+					<img class="s_fittedIcon paddingSlim" th:src="@{/resources/img/menu.png}" src="../static/resources/img/menu.png" id="menuImg"/>
+				</div>
+				
+				<div class="s_fittedIconWrapper floatLeft">
+					<img class="s_fittedIcon paddingSlim" th:src="@{/resources/img/logo.png}"/>
+				</div>
+ 
+ 				<!-- # LOGIN # -->
+				<div sec:authorize="!isAuthenticated()" class="s_fittedIconWrapper decentClickable floatRight">
+					<a th:href="@{/login}">
+						<img class="s_fittedIcon paddingSlim" th:src="@{/resources/img/login.png}" src="../static/resources/img/login.png"/>
+					</a>
+				</div>
+				
+				<!-- # LOGOUT # -->
+				<div sec:authorize="isAuthenticated()" class="s_fittedIconWrapper decentClickable floatRight">
+					<a th:href="@{/logout}">
+						<img class="s_fittedIcon paddingSlim" th:src="@{/resources/img/logout.png}" src="../static/resources/img/logout.png"/>
+					</a>
+				</div>
+ 
+    			</div>
+    			<!-- END HALF WIDTH -->
+
+	    </div>
+	    <!-- END HEADER -->
+	    
+	    	<!-- # CONTENT CONTAINER # -->
+		<div class="s_halfBox">
+		
+			<!-- # INFO MESSAGE # -->
+			<div th:if="${msgInfo}" class="s_info">
+				<div class="s_msgIconWrapper decentClickable" onClick="removeElement(this.parentNode);">
+					<img th:src="@{/resources/img/cancelDark.png}"/>
+				</div>
+				<div th:text="${msgInfo}" class="s_msgText"></div>
+			</div>
+			
+			<!-- # ERROR MESSAGE # -->
+			<div th:if="${msgError}" class="s_error">
+				<div class="s_msgIconWrapper decentClickable" onClick="removeElement(this.parentNode);">
+					<img th:src="@{/resources/img/cancelDark.png}"/>
+				</div>
+				<div th:text="${msgError}" class="s_msgText"></div>
+			</div>
+			
+			<!-- # NAVIGATION # -->
+			<div class="s_nav" id="navBar">
+	        		<a th:href="@{/}"><span>home</span></a>
+    		    		<a th:href="@{/bookings}"><span>bookings</span></a>
+	    		</div>
+	    		
+	    		<!-- # - - - - - - - - - - - - # -->
+	    		<!-- #      CUSTOM CONTENT     # -->
+	    		<!-- # - - - - - - - - - - - - # -->
+	    		
+	    		<!--
+	    		Benutzerdefinierter Inhalt wird über den
+	    		Controller festgelegt, in dem das Modelattribut "fragment"
+	    		controllerseitig gesetzt wird. Dieses Attribut bezeichnet
+	    		immer eine HTML-Datei im Ordner fragments/. Thymleaf kopiert
+	    		dann den Inhalt dieser Datei in das folgende div rein.
+	    		-->
+	    		
+	    		<div th:if="${fragment}" class="s_full">
+	    			<div class="s_full" th:replace=" __'fragments/' + ${fragment} + ' :: ' + ${fragment}__ ">
+	    			</div>
+	    		</div>
+	    		
+	    		<!-- # - - - - - - - - - - - - # -->
+	    		<!-- #    END CUSTOM CONTENT   # -->
+	    		<!-- # - - - - - - - - - - - - # -->
+		
+		</div>
+		<!-- END CONTENT -->
+
+	</body>
+</html>
