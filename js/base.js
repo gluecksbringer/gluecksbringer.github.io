@@ -7,6 +7,7 @@ var startIndex = 1;
 var endIndex = 10;
 
 var body = null;
+var c = null;
 
 function init() {
 	//menuImgWrapper = document.getElementById('menuImgWrapper');
@@ -15,7 +16,7 @@ function init() {
 	body = document.getElementById('body');
 	imgWrapper = document.getElementById('imgWrapper');
 	imgContainer = document.getElementById('imgContainer');
-
+	c = document.getElementById('myCanvas');
 	//menuImgWrapper.addEventListener("click", toggleMenu);
 
 	resizeWrapper();
@@ -36,6 +37,7 @@ function removeElement(obj) {
 }
 
 function resizeWrapper() {
+
 	if ( imgWrapper.clientWidth < 600 ) {
 
 	}
