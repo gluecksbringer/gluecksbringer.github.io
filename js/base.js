@@ -83,9 +83,13 @@ function init() {
 	}
 
 	//Show percentage bar
-	document.getElementById('innerBar').classList.add('barShown');
+	setTimeout(showBar, 250);
 
 	console.log("Init success");
+}
+
+function showBar() {
+	document.getElementById('innerBar').classList.add('barShown');
 }
 
 function toggleMenu() {
