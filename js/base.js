@@ -70,26 +70,22 @@ function init() {
 		tmp.src = "img/other/i-"+i+".jpg";
 	}
 
-
-	//menuImgWrapper = document.getElementById('menuImgWrapper');
-	//navBar = document.getElementById('navBar');
-
 	body = document.getElementById('body');
 	imgWrapper = document.getElementById('imgWrapper');
 	imgContainer = document.getElementById('imgContainer');
 	c = document.getElementById('myCanvas');
 	ctx = c.getContext("2d");
 
-	//menuImgWrapper.addEventListener("click", toggleMenu);
-
-	resizeWrapper();
-	console.log("Init success");
-
 	resizeWrapper();
 
+	if ( document.getElementById('innerBar').classList.contains('barShown') ) {
+		document.getElementById('innerBar').classList.remove('barShown');
+	}
 
 	//Show percentage bar
 	document.getElementById('innerBar').classList.add('barShown');
+
+	console.log("Init success");
 }
 
 function toggleMenu() {
