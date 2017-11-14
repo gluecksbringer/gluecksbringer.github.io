@@ -56,6 +56,7 @@ function initImage() {
 		console.log('Finished image loading');
 		setTimeout(change, interval);
 		current = 0;
+		setTimeout(showBar, 250);
 	}
 }
 
@@ -83,8 +84,6 @@ function init() {
 	}
 
 	//Show percentage bar
-	setTimeout(showBar, 250);
-
 	console.log("Init success");
 }
 
