@@ -15,6 +15,7 @@ function init() {
 
 	//menuImgWrapper.addEventListener("click", toggleMenu);
 	imgWrapper.addEventListener('resize', resizeWrapper);
+	console.log("success");
 }
 
 function toggleMenu() {
