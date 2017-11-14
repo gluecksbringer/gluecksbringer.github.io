@@ -17,7 +17,7 @@ var img1 = null;
 
 function init() {
 
-	img1 = new Image(160, 90);
+	img1 = new Image();
 	img1.src = 'img/other/i-1.jpg';
 
 
@@ -61,8 +61,6 @@ function resizeWrapper() {
 		ih = 300;
 		c.style.height = "300px";
 	}
-
-	img1.style.width = iw+"px";
-	img1.style.height = ih+"px";
+	
 	ctx.drawImage(img1, 0, 0);
 }
