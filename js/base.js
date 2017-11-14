@@ -27,6 +27,7 @@ function init() {
 	ctx.lineTo(200, 100);
 	ctx.stroke();
 	console.log("Init success");
+	resizeWrapper();
 }
 
 function toggleMenu() {
