@@ -18,7 +18,7 @@ var img1 = null;
 function init() {
 
 	img1 = new Image(160, 90);
-	img1.src = 'img/other/img1';
+	img1.src = 'img/other/i-1.jpg';
 
 
 	//menuImgWrapper = document.getElementById('menuImgWrapper');
