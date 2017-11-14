@@ -8,6 +8,7 @@ var endIndex = 10;
 
 var body = null;
 var c = null;
+var ctx = null;
 
 function init() {
 	//menuImgWrapper = document.getElementById('menuImgWrapper');
@@ -17,6 +18,11 @@ function init() {
 	imgWrapper = document.getElementById('imgWrapper');
 	imgContainer = document.getElementById('imgContainer');
 	c = document.getElementById('myCanvas');
+	ctx = c.getContext("2d");
+
+	ctx.moveTo(0,0);
+	ctx.lineTo(200, 100);
+	ctx.stroke();
 	//menuImgWrapper.addEventListener("click", toggleMenu);
 
 	resizeWrapper();
