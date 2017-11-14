@@ -33,7 +33,7 @@ function removeElement(obj) {
 
 function resizeWrapper() {
 	console.log('hello');
-	if ( imgWrapper.width < 600 ) {
+	if ( imgWrapper.clientWidth < 600 ) {
 		console.log('Under 600');
 	}
 }
