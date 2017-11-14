@@ -45,8 +45,8 @@ function removeElement(obj) {
 function resizeWrapper() {
 
 	if ( imgWrapper.clientWidth < 600 ) {
-		img.style.height = (imgWrapper.clientWidth/6)+"px";
+		c.style.height = (imgWrapper.clientWidth/6)+"px";
 	} else {
-		img.style.height = "300px";
+		c.style.height = "300px";
 	}
 }
