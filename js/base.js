@@ -3,6 +3,9 @@ var navBar = null;
 var imgWrapper = null;
 var imgContainer = null;
 
+var startIndex = 1;
+var endIndex = 10;
+
 function init() {
 	menuImgWrapper = document.getElementById('menuImgWrapper');
 	navBar = document.getElementById('navBar');
@@ -28,6 +31,7 @@ function removeElement(obj) {
 }
 
 function resizeWrapper() {
+	console.log('hello');
 	if ( imgWrapper.width < 600 ) {
 		console.log('Under 600');
 	}
