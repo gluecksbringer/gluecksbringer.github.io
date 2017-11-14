@@ -17,7 +17,7 @@ function init() {
 	imgContainer = document.getElementById('imgContainer');
 
 	//menuImgWrapper.addEventListener("click", toggleMenu);
-	body.addEventListener('resize', resizeWrapper);
+	body.onResize = resizeWrapper;
 	console.log("success");
 }
 
