@@ -17,7 +17,9 @@ function init() {
 	imgContainer = document.getElementById('imgContainer');
 
 	//menuImgWrapper.addEventListener("click", toggleMenu);
-	console.log("success");
+
+	resizeWrapper();
+	console.log("Init success");
 }
 
 function toggleMenu() {
@@ -34,8 +36,7 @@ function removeElement(obj) {
 }
 
 function resizeWrapper() {
-	console.log('hello');
 	if ( imgWrapper.clientWidth < 600 ) {
-		console.log('Under 600');
+
 	}
 }
